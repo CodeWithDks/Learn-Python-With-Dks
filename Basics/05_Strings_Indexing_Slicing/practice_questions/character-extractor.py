@@ -20,7 +20,7 @@ Last character: k
 """
 
 # Taking user input for the name
-name = input("Enter your name: ")
+name = input("Enter your name: ").strip()  # Removing any leading/trailing whitespace
 
 # Extracting the first and last characters
 first_character = name[0]
