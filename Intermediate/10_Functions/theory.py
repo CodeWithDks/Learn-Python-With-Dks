@@ -428,3 +428,300 @@ print(factorial(5))
 squares = lambda num: num*num
 
 print(squares(5))
+
+"""
+Anonymous one-line function.
+"""
+
+"""
+=========================================================
+21. MAP FUNCTION
+=========================================================
+"""
+
+numbers = [1,2,3,4]
+
+result = list(map(
+    lambda x:x*2,
+    numbers
+))
+print(result)
+
+
+"""
+Output:
+
+[2,4,6,8]
+"""
+
+
+"""
+=========================================================
+22. FILTER FUNCTION
+=========================================================
+"""
+
+numbers=[1,2,3,4,5,6]
+
+even=list(filter(
+lambda x:x%2==0,
+numbers
+))
+
+print(even)
+
+
+"""
+Output:
+
+[2,4,6]
+"""
+
+"""
+=========================================================
+23. REDUCE FUNCTION
+=========================================================
+"""
+
+from functools import reduce
+
+numbers=[1,2,3,4]
+
+result=reduce(
+lambda a,b:a+b,
+numbers
+)
+
+print(result)
+"""
+Output:
+
+10
+"""
+
+"""
+=========================================================
+24. NESTED FUNCTION
+=========================================================
+"""
+
+def outer():
+
+    def inner():
+
+        print("Inner")
+
+    inner()
+
+outer()
+
+
+"""
+Function inside function.
+"""
+
+"""
+=========================================================
+25. CLOSURE
+=========================================================
+"""
+
+def outer(x):
+
+    def inner(y):
+
+        return x+y
+
+    return inner
+
+add5 = outer(5)
+
+print(add5(10))
+
+"""
+Output:
+
+15
+"""
+
+
+"""
+=========================================================
+26. DECORATOR BASICS
+=========================================================
+"""
+
+def decorator(func):
+
+    def wrapper():
+
+        print("Before")
+
+        func()
+
+        print("After")
+
+    return wrapper
+
+
+@decorator
+
+def hello():
+
+    print("Hello")
+
+hello()
+
+
+"""
+Decorator modifies behavior.
+
+Output:
+
+Before
+Hello
+After
+"""
+
+
+
+"""
+=========================================================
+27. GENERATOR FUNCTION
+=========================================================
+"""
+
+def numbers():
+
+    yield 1
+
+    yield 2
+
+    yield 3
+
+for i in numbers():
+
+    print(i)
+
+
+"""
+yield creates generator.
+
+Efficient memory usage.
+"""
+
+
+
+"""
+=========================================================
+28. VARIABLE SCOPE (LEGB RULE)
+=========================================================
+
+L = Local
+
+E = Enclosing
+
+G = Global
+
+B = Built-in
+
+Python searches variables in this order.
+"""
+
+"""
+=========================================================
+29. BUILT-IN FUNCTIONS
+=========================================================
+
+Examples:
+
+print()
+
+len()
+
+max()
+
+min()
+
+sum()
+
+sorted()
+
+type()
+
+input()
+
+range()
+
+id()
+
+abs()
+
+round()
+
+"""
+
+"""
+=========================================================
+30. HIGHER ORDER FUNCTION
+=========================================================
+"""
+
+def operate(func,a,b):
+
+    return func(a,b)
+
+def add(a,b):
+
+    return a+b
+
+print(
+operate(
+add,
+10,
+20
+)
+)
+
+
+"""
+Higher-order function:
+
+Takes function as parameter
+OR
+
+Returns function
+"""
+
+
+"""
+=========================================================
+IMPORTANT INTERVIEW QUESTIONS
+
+1. print vs return
+
+2. *args vs **kwargs
+
+3. local vs global
+
+4. recursion
+
+5. lambda
+
+6. closure
+
+7. decorator
+
+8. generator
+
+9. scope
+
+10. higher-order functions
+
+=========================================================
+
+FUNCTION COMPLETE
+=========================================================
+"""
+
+
