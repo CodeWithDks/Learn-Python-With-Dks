@@ -130,6 +130,19 @@ I started learning Python to improve my programming fundamentals, logical thinki
 - Function practice problems
 - Functions completed.
 
+## Day 11 — Modules in Python
+- Introduction to modules
+- Importing modules
+- Using built-in modules
+- import statement
+- from module import
+- aliasing using as
+- math module
+- random module
+- Creating custom modules
+- Using functions from modules
+- Module practice programs
+
 # Practice Included
 - Real-world beginner problems
 - Mini logic-building challenges
