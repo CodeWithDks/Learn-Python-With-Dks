@@ -132,7 +132,6 @@ Output:
 7. IMPORT MULTIPLE FUNCTIONS
 =========================================================
 """
-
 from math_utils import add, subtract
 
 print(add(2,3))
@@ -501,3 +500,84 @@ importlib.reload(math)
 """
 Useful during development.
 """
+
+"""
+=========================================================
+27. MODULE VS FUNCTION
+=========================================================
+
+Module:
+Complete Python file
+
+Function:
+Reusable block of code inside module
+"""
+
+"""
+=========================================================
+28. MODULE VS PACKAGE
+=========================================================
+
+Module:
+Single Python file
+
+Package:
+Folder containing multiple modules
+"""
+
+"""
+=========================================================
+29. COMMON BEGINNER MISTAKES
+=========================================================
+
+1. Using import *
+
+2. Keeping all code in one file
+
+3. Not understanding namespaces
+
+4. Circular imports
+
+5. Confusing module and package
+"""
+
+
+"""
+=========================================================
+30. INTERVIEW QUESTIONS
+=========================================================
+
+1. What is a module?
+
+2. Why modules are important?
+
+3. Difference between module and package
+
+4. Explain __name__
+
+5. Explain __main__
+
+6. import vs from import
+
+7. Why import * is bad?
+"""
+
+
+
+"""
+=========================================================
+31. FINAL SUMMARY
+=========================================================
+
+A module is a Python file used to organize and reuse code.
+
+Modules are one of the foundations of professional
+Python development.
+
+Without understanding modules properly:
+
+- projects become messy
+- debugging becomes difficult
+- architecture becomes weak
+"""
+
