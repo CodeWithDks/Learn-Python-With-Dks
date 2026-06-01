@@ -143,6 +143,17 @@ I started learning Python to improve my programming fundamentals, logical thinki
 - Using functions from modules
 - Module practice programs
 
+# Packages in Python
+- Introduction to packages
+- Difference between modules and packages
+- Creating packages
+- __init__.py file
+- Importing modules from packages
+- Using custom packages
+- Package folder structure
+- Organizing Python code using packages
+- Package practice programs
+
 # Practice Included
 - Real-world beginner problems
 - Mini logic-building challenges
@@ -150,6 +161,39 @@ I started learning Python to improve my programming fundamentals, logical thinki
 - Clean code formatting practice
 
 ---
+
+## Day 12 — File Handling in Python
+- Introduction to file handling
+- Opening files using open()
+- File modes
+  - read (r)
+  - write (w)
+  - append (a)
+  - read and write (r+)
+- Reading files
+  - read()
+  - readline()
+  - readlines()
+- Writing to files
+- Appending data to files
+- Closing files using close()
+- Using with statement
+- File handling practice programs
+
+## Day 13 — Exception Handling in Python
+- Introduction to exceptions
+- Handling errors using try and except
+- Multiple except blocks
+- else block
+- finally block
+- Raising exceptions using raise
+- Common built-in exceptions
+  - ValueError
+  - TypeError
+  - ZeroDivisionError
+  - IndexError
+  - KeyError
+- Exception handling practice programs
 
 ---
 
