@@ -341,3 +341,157 @@ import sys
 
 print(sys.path)
 
+"""
+Python searches packages in:
+
+1. Current directory
+2. Installed libraries
+3. System paths
+"""
+
+"""
+=========================================================
+21. IMPORTING ENTIRE PACKAGE
+=========================================================
+"""
+
+import utilities
+
+
+"""
+Only package imports.
+
+Modules still need explicit access.
+"""
+
+"""
+=========================================================
+22. PACKAGE VS LIBRARY
+=========================================================
+
+Package:
+Collection of modules
+
+Library:
+Collection of packages/modules providing functionality
+"""
+
+"""
+=========================================================
+23. REAL-WORLD PACKAGE STRUCTURE
+=========================================================
+"""
+
+# project/
+
+#     app/
+
+#         api/
+#         models/
+#         services/
+#         database/
+#         utils/
+
+"""
+Professional projects follow organized structure.
+"""
+
+
+"""
+=========================================================
+24. WHY PROJECT STRUCTURE MATTERS
+=========================================================
+
+Without structure:
+
+- debugging becomes difficult
+- teamwork becomes hard
+- navigation becomes confusing
+- scaling becomes painful
+"""
+
+
+"""
+=========================================================
+25. COMMON BEGINNER MISTAKES
+=========================================================
+
+1. Not creating __init__.py
+
+2. Keeping everything in one folder
+
+3. Confusing package and module
+
+4. Using bad import structure
+
+5. Circular imports
+"""
+
+"""
+=========================================================
+26. CIRCULAR IMPORT PROBLEM
+=========================================================
+"""
+
+# module1 imports module2
+
+# module2 imports module1
+
+
+"""
+This creates dependency loop.
+
+Very common beginner mistake.
+"""
+
+"""
+=========================================================
+27. BEST PRACTICES
+=========================================================
+
+1. Use meaningful package names
+
+2. Keep related modules together
+
+3. Prefer absolute imports
+
+4. Avoid circular imports
+
+5. Keep package structure clean
+"""
+
+"""
+=========================================================
+28. INTERVIEW QUESTIONS
+=========================================================
+
+1. What is package?
+
+2. Difference between module and package
+
+3. What is __init__.py ?
+
+4. Absolute vs relative import
+
+5. Why packages are important?
+
+6. What is namespace package?
+"""
+
+"""
+=========================================================
+29. FINAL SUMMARY
+=========================================================
+
+Packages are used to organize modules properly.
+
+Packages are essential for:
+
+- large projects
+- scalable applications
+- teamwork
+- maintainable code
+
+Without proper package structure,
+real-world Python development becomes difficult.
+"""

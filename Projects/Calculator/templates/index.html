@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="calculator">
+
+        <!-- DISPLAY SCREEN -->
+        <div class="display">
+            <div class="display__expression" id="expression"></div>
+            <div class="display__result" id="result">0</div>
+        </div>
+
+        <!-- BUTTONS GRID -->
+        <div class="buttons">
+
+            <!-- Row 1 - Control -->
+            <button class="btn btn--control" data-action="clear">AC</button>
+            <button class="btn btn--control" data-action="toggle-sign">+/-</button>
+            <button class="btn btn--operator" data-value="%">%</button>
+            <button class="btn btn--operator" data-value="/">÷</button>
+
+            <!-- Row 2 -->
+            <button class="btn btn--number" data-value="7">7</button>
+            <button class="btn btn--number" data-value="8">8</button>
+            <button class="btn btn--number" data-value="9">9</button>
+            <button class="btn btn--operator" data-value="*">×</button>
+
+            <!-- Row 3 -->
+            <button class="btn btn--number" data-value="4">4</button>
+            <button class="btn btn--number" data-value="5">5</button>
+            <button class="btn btn--number" data-value="6">6</button>
+            <button class="btn btn--operator" data-value="-">−</button>
+
+            <!-- Row 4 -->
+            <button class="btn btn--number" data-value="1">1</button>
+            <button class="btn btn--number" data-value="2">2</button>
+            <button class="btn btn--number" data-value="3">3</button>
+            <button class="btn btn--operator" data-value="+">+</button>
+
+            <!-- Row 5 -->
+            <button class="btn btn--number btn--zero" data-value="0">0</button>
+            <button class="btn btn--number" data-value=".">.</button>
+            <button class="btn btn--equals" data-action="calculate">=</button>
+
+        </div>
+
+        <!-- HISTORY PANEL -->
+        <div class="history">
+            <p class="history__title">History</p>
+            <ul class="history__list" id="history-list">
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

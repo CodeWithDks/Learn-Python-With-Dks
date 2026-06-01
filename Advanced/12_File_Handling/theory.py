@@ -439,3 +439,226 @@ Output:
 True or False
 """
 
+"""
+=========================================================
+26. DELETE FILE
+=========================================================
+"""
+
+import os
+
+# os.remove("sample.txt")
+
+
+"""
+Deletes file permanently.
+"""
+
+"""
+=========================================================
+27. RENAME FILE
+=========================================================
+"""
+
+import os
+
+os.rename("newfile.txt", "new.txt")
+
+
+"""
+Renames file.
+"""
+
+"""
+=========================================================
+28. GET FILE SIZE
+=========================================================
+"""
+
+import os
+
+print(os.path.getsize("sample.txt"))
+
+
+"""
+Returns file size in bytes.
+"""
+
+"""
+=========================================================
+29. EXCEPTION HANDLING WITH FILES
+=========================================================
+"""
+
+try:
+
+    with open("data.txt", "r") as file:
+
+        print(file.read())
+
+except FileNotFoundError:
+
+    print("File not found")
+
+
+"""
+Prevents program crash.
+"""
+
+"""
+=========================================================
+30. BINARY FILES
+=========================================================
+"""
+
+# with open("image.jpg", "rb") as file:
+
+#     data = file.read()
+
+
+"""
+rb -> Read Binary
+
+Used for:
+
+Images
+Videos
+PDFs
+Audio Files
+"""
+
+"""
+=========================================================
+31. WRITE BINARY FILE
+=========================================================
+"""
+
+# with open("copy.jpg", "wb") as file:
+
+#     file.write(data)
+
+
+"""
+wb -> Write Binary
+"""
+
+"""
+=========================================================
+32. COMMON BEGINNER MISTAKES
+=========================================================
+
+1. Forgetting to close file
+
+2. Using write mode accidentally
+
+3. Reading non-existing file
+
+4. Not using exception handling
+
+5. Not using with statement
+"""
+
+"""
+=========================================================
+33. BEST PRACTICES
+=========================================================
+
+1. Use with statement
+
+2. Handle exceptions
+
+3. Use meaningful file names
+
+4. Close files properly
+
+5. Validate file existence
+"""
+
+"""
+=========================================================
+34. REAL-WORLD EXAMPLE
+=========================================================
+"""
+
+name = input("Enter your name: ")
+
+with open("users.txt", "a") as file:
+
+    file.write(name + "\n")
+
+
+"""
+Stores user names permanently.
+"""
+
+"""
+=========================================================
+35. REAL-WORLD EXAMPLE
+=========================================================
+"""
+
+note = input("Write a note: ")
+
+with open("notes.txt", "a") as file:
+
+    file.write(note + "\n")
+
+
+"""
+Simple Notes Application.
+"""
+
+"""
+=========================================================
+36. INTERVIEW QUESTIONS
+=========================================================
+
+1. What is file handling?
+
+2. Difference between r, w, and a modes
+
+3. What is with statement?
+
+4. Difference between read(), readline(),
+   and readlines()
+
+5. What is seek()?
+
+6. What is tell()?
+
+7. Why use exception handling with files?
+
+8. Difference between text and binary files?
+"""
+
+
+"""
+=========================================================
+37. FINAL SUMMARY
+=========================================================
+
+File handling allows Python programs to store and
+retrieve data permanently.
+
+Important concepts:
+
+- open()
+- file modes
+- read()
+- write()
+- seek()
+- tell()
+- with statement
+- exception handling
+
+File handling is heavily used in:
+
+- Automation
+- Data Analysis
+- APIs
+- Backend Development
+- Desktop Applications
+"""
+
+
+
