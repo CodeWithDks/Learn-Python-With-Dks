@@ -1,7 +1,7 @@
-# TO DO LIST.
-
+# TO DO LIST
 
 tasks = []
+completed_tasks = []
 
 
 def menu():
@@ -9,7 +9,8 @@ def menu():
     1. Add Task
     2. Delete Task
     3. Show Tasks
-    4. Exit
+    4. Modify Task
+    5. Exit
     """)
 
 
@@ -33,8 +34,26 @@ def delete_task(task):
         print("This task does not exist.")
 
 
+def modify(task, new_task):
+    if not tasks:
+        print("Tasks list is empty.")
+        return
+
+    if not new_task:
+        print("New task cannot be empty.")
+        return
+
+    if task in tasks:
+        index = tasks.index(task)
+        tasks[index] = new_task
+        print("Task modified successfully.")
+    else:
+        print("Task not found.")
+
+
 while True:
     menu()
+
     choice = input("Enter your choice: ").strip()
 
     if choice == "1":
@@ -54,6 +73,11 @@ while True:
                 print(f"{i}. {task}")
 
     elif choice == "4":
+        task = input("Enter task to modify: ").strip()
+        new_task = input("Enter new task name: ").strip()
+        modify(task, new_task)
+
+    elif choice == "5":
         print("Thanks for using my to-do list.")
         break
 
