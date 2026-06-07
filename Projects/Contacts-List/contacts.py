@@ -1,8 +1,25 @@
 # CONTACTS LIST IN YOUR PHONE
 
+import json
+
 print("CONTACTS LIST IN OUR PHONE")
 
 contacts = {}
+
+
+def load_contacts():
+    global contacts
+
+    try:
+        with open("contacts.json", "r") as file:
+            contacts = json.load(file)
+
+    except FileNotFoundError:
+        contacts = {}
+
+def save_contacts():
+        with open("contacts.json", "w") as file:
+            json.dump(contacts, file)
 
 
 def menu():
@@ -13,7 +30,8 @@ def menu():
     4. Delete Contact
     5. Edit Contact Number
     6. Edit Contact Name
-    7. Exit
+    7. All Contact List.
+    8. Exit
     """)
 
 
@@ -23,6 +41,7 @@ def add_contact(name, phone_number):
         print(f"{name}: {contacts[name]}")
     else:
         contacts[name] = phone_number
+        save_contacts()
         print(f"{name} added successfully.")
 
 
@@ -32,8 +51,9 @@ def view_contacts():
         return
 
     print("\nYour Phone Contacts List:")
-    for name, phone_number in contacts.items():
-        print(f"{name}: {phone_number}")
+    print(f"\nTotal Contacts: {len(contacts)}")
+    for name in sorted(contacts):
+        print(name, contacts[name])
 
 
 def search_contact(name):
@@ -54,6 +74,7 @@ def delete_contact(name):
 
     if name in contacts:
         del contacts[name]
+        save_contacts()
         print(f"{name} deleted successfully.")
     else:
         print("Contact not found.")
@@ -67,6 +88,7 @@ def edit_contact_number(name, new_phone_number):
     if name in contacts:
         print(f"Before: {name}: {contacts[name]}")
         contacts[name] = new_phone_number
+        save_contacts()
         print(f"After : {name}: {contacts[name]}")
     else:
         print("Contact not found.")
@@ -88,8 +110,16 @@ def edit_contact_name(old_name, new_name):
     print(f"Before: {old_name}: {contacts[old_name]}")
 
     contacts[new_name] = contacts.pop(old_name)
+    save_contacts()
 
     print(f"After : {new_name}: {contacts[new_name]}")
+
+
+def contact_count():
+    print(f"Total Contacts: {len(contacts)}")
+
+
+load_contacts()
 
 
 while True:
@@ -114,6 +144,10 @@ while True:
             print("Phone number must be exactly 10 digits.")
             continue
 
+        if phone_number in contacts.values():
+            print("phone number already exists.")
+            continue
+
         add_contact(name, phone_number)
 
     elif choice == "2":
@@ -135,7 +169,11 @@ while True:
             print("Name can't be empty.")
             continue
 
-        delete_contact(name)
+        confirm = input("Are you sure? (y/n): ")
+
+        if confirm.lower() == "y":
+            delete_contact(name)
+
 
     elif choice == "5":
         name = input("Enter contact name: ").strip().title()
@@ -152,6 +190,13 @@ while True:
 
         if len(new_phone_number) != 10:
             print("Phone number must be exactly 10 digits.")
+            continue
+
+        if (
+            new_phone_number in contacts.values()
+            and contacts.get(name) != new_phone_number
+        ):
+            print("Phone number already exists.")
             continue
 
         edit_contact_number(name, new_phone_number)
@@ -171,7 +216,12 @@ while True:
 
         edit_contact_name(old_name, new_name)
 
-    elif choice == "7":
+
+    elif choice == '7':
+        contact_count()
+
+        
+    elif choice == "8":
         print("Goodbye.")
         break
 
