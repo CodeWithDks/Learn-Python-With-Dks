@@ -17,9 +17,13 @@ def load_contacts():
     except FileNotFoundError:
         contacts = {}
 
+    except json.JSONDecodeError:
+        print("Contacts file is corrupted. Starting with an empty contact list.")
+        contacts = {}
+
 def save_contacts():
-        with open("contacts.json", "w") as file:
-            json.dump(contacts, file)
+    with open("contacts.json", "w") as file:
+        json.dump(contacts, file, indent=4)
 
 
 def menu():
@@ -46,14 +50,16 @@ def add_contact(name, phone_number):
 
 
 def view_contacts():
+    print(f"\nTotal Contacts: {len(contacts)}")
+
     if not contacts:
         print("Contact list is empty.")
         return
 
     print("\nYour Phone Contacts List:")
-    print(f"\nTotal Contacts: {len(contacts)}")
+
     for name in sorted(contacts):
-        print(name, contacts[name])
+        print(f"{name}: {contacts[name]}")
 
 
 def search_contact(name):
@@ -116,7 +122,10 @@ def edit_contact_name(old_name, new_name):
 
 
 def contact_count():
-    print(f"Total Contacts: {len(contacts)}")
+    if not contacts:
+        print("Contact list is empty.")
+    else:
+        print(f"Total Contacts: {len(contacts)}")
 
 
 load_contacts()
@@ -145,7 +154,7 @@ while True:
             continue
 
         if phone_number in contacts.values():
-            print("phone number already exists.")
+            print("Phone number already exists.")
             continue
 
         add_contact(name, phone_number)
@@ -173,6 +182,8 @@ while True:
 
         if confirm.lower() == "y":
             delete_contact(name)
+        else:
+            print("Delete operation cancelled.")
 
 
     elif choice == "5":
@@ -217,7 +228,7 @@ while True:
         edit_contact_name(old_name, new_name)
 
 
-    elif choice == '7':
+    elif choice == "7":
         contact_count()
 
         
