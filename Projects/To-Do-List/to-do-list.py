@@ -10,7 +10,8 @@ def menu():
     2. Delete Task
     3. Show Tasks
     4. Modify Task
-    5. Exit
+    5. Completed Tasks.
+    6. Exit
     """)
 
 
@@ -51,6 +52,10 @@ def modify(task, new_task):
         print("Task not found.")
 
 
+def completed_tasks():
+    pass
+
+
 while True:
     menu()
 
@@ -78,6 +83,9 @@ while True:
         modify(task, new_task)
 
     elif choice == "5":
+        pass
+
+    elif choice == "6":
         print("Thanks for using my to-do list.")
         break
 
