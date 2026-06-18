@@ -24,6 +24,7 @@ class Student:
         print(f"Roll Number  : {self.roll_no}")
 
 
+
 print("===== STUDENT ADMISSION SYSTEM =====")
 
 while True:

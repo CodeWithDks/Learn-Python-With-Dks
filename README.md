@@ -197,6 +197,30 @@ I started learning Python to improve my programming fundamentals, logical thinki
 
 ---
 
+## Day 14 — Object-Oriented Programming (OOP) Part 1
+- Introduction to Object-Oriented Programming (OOP)
+- Why OOP is Needed
+- Understanding Classes
+- Understanding Objects
+- Creating Classes
+- Creating Objects
+- Constructors (`__init__`)
+- The `self` Keyword
+- Instance Variables
+- Instance Methods
+- Creating Multiple Objects
+- Modifying Object Attributes
+- Class Variables
+- Difference Between Class Variables and Instance Variables
+- Class Methods (`@classmethod`)
+- Static Methods (`@staticmethod`)
+- String Representation using `__str__()`
+- Official Object Representation using `__repr__()`
+- Object Lifecycle Basics
+- Real-world Examples of OOP
+- Common Beginner Mistakes in OOP
+- OOP Interview Questions and Practice
+
 # Goals
 - Build strong Python fundamentals
 - Improve logical thinking
