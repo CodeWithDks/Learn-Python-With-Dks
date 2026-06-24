@@ -378,13 +378,10 @@ pip install requests
 # 26. IMPORT REQUESTS MODULE
 # ==========================================================
 
-try:
-    import requests
-except ImportError:
-    print("The 'requests' module is not installed. Run 'pip install requests' and try again.")
-    requests = None
-else:
-    print("Requests Imported Successfully")
+import requests
+
+print("The 'requests' module is not installed. Run 'pip install requests' and try again.")
+print("Requests Imported Successfully")
 
 
 # ==========================================================
